@@ -8,6 +8,11 @@ def home():
 
 @app.route('/student/<int:student_id>')
 def display_student(student_id):
-    return render_template('student.html', student_id=student_id)
+    return render_template('student.html',
+     student_id=student_id,
+     student = query_by_id(student_id),
+     name=student.name,
+     year=student.year,
+     finished_lab=student.finished_lab)
 
 app.run(debug=True)

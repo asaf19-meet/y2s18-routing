@@ -21,6 +21,7 @@ def add_student(name, year, finished_lab):
 	session.add(student_object)
 	session.commit()
 
+
 def query_by_name(name):
 	"""
 	Find the first student in the database,
@@ -63,3 +64,10 @@ def query_by_id(student_id):
     student = session.query(Student).filter_by(
         student_id=student_id).first()
     return student
+
+
+add_student("asaf","Y2", True)
+add_student("amit","Y2", False)
+add_student("yonatan","Y2", True)
+add_student("adriana","Y2", False)
+add_student("grassan","Y2", True)
