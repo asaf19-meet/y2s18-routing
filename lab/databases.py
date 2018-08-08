@@ -50,6 +50,10 @@ def delete_student(name):
 		name=name).delete()
 	session.commit()
 
+def delete_all():
+	session.query(Student).delete()
+	session.commit()
+
 def update_lab_status(name, finished_lab):
 	"""
 	Update a student in the database, with 
@@ -65,9 +69,10 @@ def query_by_id(student_id):
         student_id=student_id).first()
     return student
 
-
-add_student("asaf","Y2", True)
-add_student("amit","Y2", False)
-add_student("yonatan","Y2", True)
-add_student("adriana","Y2", False)
-add_student("grassan","Y2", True)
+# delete_all()
+# add_student("asaf","Y2", True)
+# add_student("amit","Y2", False)
+# add_student("yonatan","Y2", True)
+# add_student("adriana","Y2", False)
+# add_student("grassan","Y2", True)
+# print(query_all())
